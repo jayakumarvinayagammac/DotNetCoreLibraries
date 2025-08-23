@@ -1,0 +1,33 @@
+# .NET
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio Code
+.vscode/
+
+# MacOS
+.DS_Store
+
+# Logs
+*.log
+
+# Test results
+TestResults/
+
+# Build
+build/
+
+# NuGet
+*.nupkg
+.nuget/
+
+# Others
+*.swp
+*.tmp
+*.bak
+*.orig
+*.rej
