@@ -1,0 +1,60 @@
+Chinook:
+
+Artist: Stores artist information.
+Album: Stores album details, linked to artists.
+Track: Stores track/song info, linked to albums.
+Customer: Stores customer data.
+Invoice: Stores purchase invoices, linked to customers.
+InvoiceLine: Stores individual items on invoices.
+Employee: Stores employee info.
+Genre, MediaType: Lookup tables for tracks.
+
+API Endpoints:
+
+GET    /artists           - List all artists
+GET    /artists/{id}      - Get artist by ID
+POST   /artists           - Create new artist
+PUT    /artists/{id}      - Update artist
+DELETE /artists/{id}      - Delete artist
+
+GET    /albums            - List all albums
+GET    /albums/{id}       - Get album by ID
+POST   /albums            - Create new album
+PUT    /albums/{id}       - Update album
+DELETE /albums/{id}       - Delete album
+
+GET    /tracks            - List all tracks
+GET    /tracks/{id}       - Get track by ID
+POST   /tracks            - Create new track
+PUT    /tracks/{id}       - Update track
+DELETE /tracks/{id}       - Delete track
+
+GET    /customers         - List all customers
+GET    /customers/{id}    - Get customer by ID
+POST   /customers         - Create new customer
+PUT    /customers/{id}    - Update customer
+DELETE /customers/{id}    - Delete customer
+
+GET    /invoices          - List all invoices
+GET    /invoices/{id}     - Get invoice by ID
+POST   /invoices          - Create new invoice
+PUT    /invoices/{id}     - Update invoice
+DELETE /invoices/{id}     - Delete invoice
+
+GET    /invoicelines      - List all invoice lines
+GET    /invoicelines/{id} - Get invoice line by ID
+POST   /invoicelines      - Create new invoice line
+PUT    /invoicelines/{id} - Update invoice line
+DELETE /invoicelines/{id} - Delete invoice line
+
+GET    /employees         - List all employees
+GET    /employees/{id}    - Get employee by ID
+POST   /employees         - Create new employee
+PUT    /employees/{id}    - Update employee
+DELETE /employees/{id}    - Delete employee
+
+GET    /genres            - List all genres
+GET    /genres/{id}       - Get genre by ID
+
+GET    /mediatypes        - List all media types
+GET    /mediatypes/{id}   - Get media type by ID
