@@ -1,5 +1,6 @@
 using Chinook.API.Features.Genre;
 using Chinook.API.Features.MediaType;
+using Chinook.API.Features.Artist;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +12,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddGenreDependencies();
 // Dependency registration for MediaType feature
 builder.Services.AddMediaTypeDependencies();
+// Dependency registration for Artist feature
+builder.Services.AddArtistFeature();
 
 
 var app = builder.Build();
@@ -27,5 +30,7 @@ app.UseHttpsRedirection();
 Chinook.API.Features.Genre.GenreEndpoints.MapGenreEndpoints(app);
 // Register MediaType vertical slice endpoints
 Chinook.API.Features.MediaType.MediaTypeEndpoints.MapMediaTypeEndpoints(app);
+// Register Artist vertical slice endpoints
+Chinook.API.Features.Artist.Endpoints.MapArtistEndpoints(app);
 
 app.Run();
