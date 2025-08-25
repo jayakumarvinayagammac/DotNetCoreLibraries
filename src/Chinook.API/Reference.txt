@@ -1,5 +1,4 @@
 Chinook:
-
 Artist: Stores artist information.
 Album: Stores album details, linked to artists.
 Track: Stores track/song info, linked to albums.
@@ -10,7 +9,6 @@ Employee: Stores employee info.
 Genre, MediaType: Lookup tables for tracks.
 
 API Endpoints:
-
 GET    /artists           - List all artists
 GET    /artists/{id}      - Get artist by ID
 POST   /artists           - Create new artist

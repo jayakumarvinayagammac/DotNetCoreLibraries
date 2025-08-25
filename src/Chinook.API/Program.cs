@@ -1,6 +1,8 @@
 using Chinook.API.Features.Genre;
 using Chinook.API.Features.MediaType;
 using Chinook.API.Features.Artist;
+using Chinook.API.Persistence;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,7 +16,11 @@ builder.Services.AddGenreDependencies();
 builder.Services.AddMediaTypeDependencies();
 // Dependency registration for Artist feature
 builder.Services.AddArtistFeature();
-
+// Configure DbContext with SQLite
+var currentDirectory = Directory.GetCurrentDirectory();
+Console.WriteLine($"Current Directory: {currentDirectory}");
+builder.Services.AddDbContext<ChinookDbContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("ChinookConnection")));
 
 var app = builder.Build();
 

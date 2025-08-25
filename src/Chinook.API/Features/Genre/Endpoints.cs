@@ -9,7 +9,7 @@ public static class GenreEndpoints
     {
         endpoints.MapGet("/genres", (IGenreService genreService) =>
         {
-            var genres = genreService.GetAll();
+            var genres = genreService.GetAllAsync();
             return Results.Ok(genres);
         })
         .WithName("GetGenres")
@@ -17,7 +17,7 @@ public static class GenreEndpoints
 
         endpoints.MapGet("/genres/{id}", (int id, IGenreService genreService) =>
         {
-            var genre = genreService.GetById(id);
+            var genre = genreService.GetByIdAsync(id);
             return genre is not null ? Results.Ok(genre) : Results.NotFound();
         })
         .WithName("GetGenreById")

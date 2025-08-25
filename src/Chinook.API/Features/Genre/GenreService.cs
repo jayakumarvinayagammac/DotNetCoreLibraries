@@ -1,15 +1,25 @@
-namespace Chinook.API.Features.Genre;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
-public class GenreService : IGenreService
+namespace Chinook.API.Features.Genre
 {
-    private static readonly List<Genre> _genres = new()
+    public class GenreService : IGenreService
     {
-        new Genre(1, "Rock"),
-        new Genre(2, "Jazz"),
-        new Genre(3, "Metal")
-    };
+        private readonly IGenreRepository _genreRepository;
 
-    public IEnumerable<Genre> GetAll() => _genres;
+        public GenreService(IGenreRepository genreRepository)
+        {
+            _genreRepository = genreRepository;
+        }
 
-    public Genre? GetById(int id) => _genres.FirstOrDefault(g => g.GenreId == id);
+        public async Task<IEnumerable<Genre>> GetAllAsync()
+        {
+            return await _genreRepository.GetAllAsync();
+        }
+
+        public async Task<Genre> GetByIdAsync(int id)
+        {
+            return await _genreRepository.GetByIdAsync(id);
+        }
+    }
 }

@@ -1,4 +1,9 @@
 namespace Chinook.API.Features.Artist
 {
-    public record Artist( int ArtistId, string Name);    
+    public record Artist
+    {
+        public int ArtistId { get; set; }
+        public string Name { get; set; }
+    }
+     public record ArtistDto(int ArtistId, string Name);    
 }
