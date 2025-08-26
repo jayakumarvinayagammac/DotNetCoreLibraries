@@ -7,6 +7,7 @@ Invoice: Stores purchase invoices, linked to customers.
 InvoiceLine: Stores individual items on invoices.
 Employee: Stores employee info.
 Genre, MediaType: Lookup tables for tracks.
+Playlists
 
 API Endpoints:
 GET    /artists           - List all artists

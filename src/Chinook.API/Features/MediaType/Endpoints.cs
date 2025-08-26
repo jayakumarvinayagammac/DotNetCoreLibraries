@@ -13,6 +13,7 @@ public static class MediaTypeEndpoints
             return Results.Ok(mediaTypes);
         })
         .WithName("GetMediaTypes")
+        .WithTags("MediaTypes")
         .WithOpenApi();
 
         endpoints.MapGet("/mediatypes/{id}", (int id, IMediaTypeService mediaTypeService) =>
@@ -21,6 +22,7 @@ public static class MediaTypeEndpoints
             return mediaType is not null ? Results.Ok(mediaType) : Results.NotFound();
         })
         .WithName("GetMediaTypeById")
+        .WithTags("MediaTypes")
         .WithOpenApi();
     }
 }

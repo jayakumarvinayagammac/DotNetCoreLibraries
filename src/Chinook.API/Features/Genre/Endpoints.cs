@@ -13,6 +13,7 @@ public static class GenreEndpoints
             return Results.Ok(genres);
         })
         .WithName("GetGenres")
+        .WithTags("Genres")
         .WithOpenApi();
 
         endpoints.MapGet("/genres/{id}", (int id, IGenreService genreService) =>
@@ -21,6 +22,7 @@ public static class GenreEndpoints
             return genre is not null ? Results.Ok(genre) : Results.NotFound();
         })
         .WithName("GetGenreById")
+        .WithTags("Genres")
         .WithOpenApi();
     }
 }
